@@ -12,21 +12,18 @@ code {
     monospace;
 }
 
-header {
-  background: rgb(42, 39, 39);
-  padding: 1rem;
+.site-container {
+  min-height: 100vh;
 }
 
-header a {
-  color: aliceblue;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: larger;
+main {
+  flex: 1rem;
 }
 
 .products {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .product {
