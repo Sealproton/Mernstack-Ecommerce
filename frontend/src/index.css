@@ -19,13 +19,19 @@ code {
 main {
   flex: 1rem;
 }
-
+.btn-primary {
+  background-color: #f0c040;
+  color: black;
+}
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-
+.rating span {
+  color: #f0c040;
+  font-size: smaller;
+}
 .product {
   border: black 1px solid;
   margin: 1rem;
