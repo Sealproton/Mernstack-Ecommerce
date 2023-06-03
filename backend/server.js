@@ -6,6 +6,15 @@ app.get("/api/products", (req, res) => {
   res.send(data.products); //ส่งข้อมูลจากbackend to front
 });
 
+app.get("/api/products/slug/:slug", (req, res) => {
+  const product = data.products.find((x) => x.slug === req.params.slug);
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ message: "product not found" });
+  }
+});
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`server at http://localhost${port}`);

@@ -5,6 +5,7 @@ import axios from "axios";
 import logger from "use-reducer-logger";
 import { Col, Row } from "react-bootstrap";
 import Product from "../companent/product";
+import { Helmet } from "react-helmet-async";
 
 const reducer = (state, action) => {
   //กำหนดตัวแปรที่เรากำหนดใน useRducer โดย state คือ y และ action คือx
@@ -46,6 +47,9 @@ function HomeScreen() {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>Amazona</title>
+      </Helmet>
       <h1>Features Products</h1>
       <div className="products">
         {/* ถามว่า loading = true ป่าว ถ้าใช่ก็ให้แสดงบลาๆๆ ถ้าเป็นเออเร่อก็ บลาๆ ถ้าไม่ใช่ทั้งคู่ก็รันยาว โดยถุกกำหนดใน result แล้ว */}
