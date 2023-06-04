@@ -6,6 +6,8 @@ import logger from "use-reducer-logger";
 import { Col, Row } from "react-bootstrap";
 import Product from "../companent/product";
 import { Helmet } from "react-helmet-async";
+import LoadingBox from "../companent/loadingbox";
+import MessageBox from "../companent/messagebox";
 
 const reducer = (state, action) => {
   //กำหนดตัวแปรที่เรากำหนดใน useRducer โดย state คือ y และ action คือx
@@ -54,9 +56,9 @@ function HomeScreen() {
       <div className="products">
         {/* ถามว่า loading = true ป่าว ถ้าใช่ก็ให้แสดงบลาๆๆ ถ้าเป็นเออเร่อก็ บลาๆ ถ้าไม่ใช่ทั้งคู่ก็รันยาว โดยถุกกำหนดใน result แล้ว */}
         {loading ? (
-          <div>Loading...</div>
+          <LoadingBox />
         ) : error ? (
-          <div>{error}</div>
+          <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           <Row>
             {products.map((element) => (
